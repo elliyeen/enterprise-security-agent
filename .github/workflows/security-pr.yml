@@ -1,0 +1,23 @@
+name: Security skills validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate-skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validate required skill paths via GitHub API
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          for n in $(seq -w 1 12); do
+            gh api "repos/$REPO/contents/skills/SEC-$n/SKILL.md?ref=$REF" --silent >/dev/null
+          done
+          echo 'Skill files present; security scanners and enforcement are not yet installed.'
