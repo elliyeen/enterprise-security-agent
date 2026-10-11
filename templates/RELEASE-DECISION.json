@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "recommendation": "NO-GO",
+  "required_checks": "NOT_TESTED",
+  "human_approval": "PENDING",
+  "source_commit": null,
+  "artifact_digest": null
+}
