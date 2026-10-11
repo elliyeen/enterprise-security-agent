@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "project_id": null,
+  "source_commit": null,
+  "findings": [],
+  "note": "Empty register is not evidence of no vulnerabilities."
+}
